@@ -1,0 +1,40 @@
+<html>
+<head>
+	<title>Tip calculator</title>
+</head>
+<body>
+	<form onsubmit="calc()">
+		<label>Enter bill amount: </label>
+		<input type="number" name="amount" id="amount">
+
+		<button onclick="calc()" type="button">Calculate Tip</button>
+	</form>
+
+	<h1>Tip amount is: <span id="tip"></span></h1>
+	<script type="text/javascript">
+		var amount, tip;
+		function calc(){
+			amount = document.getElementById("amount").value;
+			amount = parseInt(amount, 10);
+
+			if(amount > 10000){
+				tip = amount * 0.07;
+				document.getElementById("tip").innerHTML = tip;
+
+			}
+			else if(amount < 10000 && amount > 5000){
+				tip = amount * 0.1;
+                    document.getElementById("tip").innerHTML = tip;
+
+
+			}
+			else  {
+				tip = amount * 0.12;
+               
+                 document.getElementById("tip").innerHTML = tip;
+
+			}
+		}
+</script>
+</body>
+</html>
